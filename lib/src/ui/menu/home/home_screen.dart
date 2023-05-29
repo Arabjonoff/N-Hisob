@@ -42,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
           GestureDetector(
             onTap: onTap,
             child: Container(
-              width: 50,
-              height: 50,
+              width: 60,
+              height: 60,
               decoration: BoxDecoration(
                   boxShadow:  [
                     BoxShadow(
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Color.fromRGBO(255, 255, 255, 0.1)
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                   color: AppColor.white
               ),
               child: Center(child: SvgPicture.asset(icons)),

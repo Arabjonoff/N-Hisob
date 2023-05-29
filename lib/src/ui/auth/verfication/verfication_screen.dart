@@ -1,8 +1,11 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:n_hisob/src/theme/color/colors.dart';
-import 'package:n_hisob/src/theme/font_theme/font_style.dart';
-import 'package:n_hisob/src/widget/button/ontap_widget.dart';
 import 'package:pinput/pinput.dart';
+
+import '../../../theme/color/colors.dart';
+import '../../../theme/font_theme/font_style.dart';
+import '../../../widget/button/ontap_widget.dart';
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({Key? key}) : super(key: key);
