@@ -66,7 +66,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ],
             ),
             const SizedBox(height: 20,),
-            OnTapWidget(title: 'Davom etish', onTap: () {}),
+            OnTapWidget(title: 'Davom etish', onTap: () {
+              Navigator.pushNamed(context, '/home');
+            }),
             const SizedBox(
               height: 32,
             )
