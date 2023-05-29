@@ -80,6 +80,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/Users/Arabjonoff/development/flutter/sdk/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "hive",
       "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/hive-2.2.3",
       "packageUri": "lib/",
@@ -152,6 +158,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "pinput",
+      "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/pinput-2.2.31",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "rxdart",
       "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.27.7",
       "packageUri": "lib/",
@@ -162,6 +174,12 @@
       "rootUri": "file:///C:/Users/Arabjonoff/development/flutter/sdk/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "smart_auth",
+      "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/smart_auth-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "source_span",
@@ -206,6 +224,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "universal_platform",
+      "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/universal_platform-1.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_graphics",
       "rootUri": "file:///C:/Users/Arabjonoff/AppData/Local/Pub/Cache/hosted/pub.dev/vector_graphics-1.1.6",
       "packageUri": "lib/",
@@ -242,7 +266,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-29T14:48:21.173169Z",
+  "generated": "2023-05-29T15:55:58.917121Z",
   "generator": "pub",
   "generatorVersion": "3.0.2"
 }

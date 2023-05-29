@@ -37,8 +37,9 @@ class Styles{
       color: color
     );
   }
-  static TextStyle bodyP(Color color){
+  static TextStyle bodyP(Color color,bool underline){
     return TextStyle(
+      decoration: underline?TextDecoration.underline:TextDecoration.none,
       fontSize: 14,
       fontStyle: FontStyle.normal,
       fontFamily: fontFamily,

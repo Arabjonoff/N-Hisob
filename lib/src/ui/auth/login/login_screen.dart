@@ -23,23 +23,45 @@ class _LoginscreenState extends State<Loginscreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(child: Column(
-              children: [
-                const SizedBox(height: 40,),
-                Image.asset('assets/icons/logo.png',width: 90,),
-                const SizedBox(height: 40,),
-                Text('Kirish ',style: Styles.boldH1(AppColor.textColor),),
-                const SizedBox(height: 15,),
-                SizedBox(
-                    width: 298,
-                    child: Text('Quyidagi satrga telefon raqamingizni kiriting ',textAlign: TextAlign.center,style: Styles.body(AppColor.textColor),)),
-                const SizedBox(height: 30,),
-                TextFieldWidget(controller: phoneController, icon: 'assets/icons/call.svg', hint: 'Telfon raqam'),
-              ],
+            Expanded(child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(height: 40,),
+                  Image.asset('assets/icons/logo.png',width: 90,),
+                  const SizedBox(height: 40,),
+                  Text('Kirish ',style: Styles.boldH1(AppColor.textColor),),
+                  const SizedBox(height: 15,),
+                  SizedBox(
+                      width: 298,
+                      child: Text('Quyidagi satrga telefon raqamingizni kiriting ',textAlign: TextAlign.center,style: Styles.body(AppColor.textColor),)),
+                  const SizedBox(height: 30,),
+                  TextFieldWidget(controller: phoneController, icon: 'assets/icons/call.svg', hint: 'Telfon raqam'),
+                ],
+              ),
             )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Accauntingiz yo‘qmi ?',
+                  style: Styles.bodyP(AppColor.textColor,false),
+                ),
+                TextButton(
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/register');
+                  },
+                  child: Text(
+                    'Ro‘yxatdan o‘ting',
+                    style: Styles.bodyP(AppColor.purple,true),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20,),
             OnTapWidget(title: 'Davom etish', onTap: (){
-
-            })
+              Navigator.pushNamed(context, '/activate');
+            }),
+            const SizedBox(height: 32,)
           ],
         ),
       ),
