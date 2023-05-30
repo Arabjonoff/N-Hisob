@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class Styles{
-  static String fontFamily = 'Roboto, sans-serif';
+  static String fontFamily = 'Roboto';
   static TextStyle boldH1(Color color){
     return TextStyle(
       fontSize: 30,

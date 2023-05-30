@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:n_hisob/src/router/router.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'N-ss',
+      title: 'N-Hisob',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/register',
+      initialRoute: '/main',
       onGenerateRoute: _route.onGenerator,
     );
   }
