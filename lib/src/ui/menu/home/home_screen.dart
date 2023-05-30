@@ -24,13 +24,15 @@ class _HomeScreenState extends State<HomeScreen> {
               width: MediaQuery.of(context).size.width,
               height: 100,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15)
+                borderRadius: BorderRadius.circular(15),
+                color: AppColor.lightPurple
               ),
+              child: TextButton(child: Text('Hamyon qoshish',style: Styles.body(AppColor.white),),onPressed: ()=>Navigator.pushNamed(context, '/wallet'),),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-            card("Hamyon qo'shish", 'assets/icons/wallet.svg', (){}),
+            card("Agent qo'shish", 'assets/icons/users.svg', (){}),
             card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
             card("Chiqim qo'shish", 'assets/icons/money_send.svg', (){}),
             card("Xarajat qo'shish", 'assets/icons/receipt.svg', (){}),

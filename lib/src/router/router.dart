@@ -5,6 +5,7 @@ import 'package:n_hisob/src/ui/menu/debt/debt_screen.dart';
 import 'package:n_hisob/src/ui/menu/home/home_screen.dart';
 import 'package:n_hisob/src/ui/menu/income/income_screen.dart';
 import 'package:n_hisob/src/ui/menu/main_screen.dart';
+import 'package:n_hisob/src/ui/menu/wallet/wallet_screen.dart';
 
 import '../ui/auth/register/register_screen.dart';
 
@@ -26,6 +27,8 @@ Route? onGenerator(RouteSettings settings){
       return _navigate(const DebtScreen());
     case '/main':
       return _navigate(const MainScreen());
+    case '/wallet':
+      return _navigate(const WalletScreen());
   }
 }
 
