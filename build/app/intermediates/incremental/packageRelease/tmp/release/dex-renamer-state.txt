@@ -1,0 +1,4 @@
+#Thu Jun 01 13:39:50 UZT 2023
+base.0=C\:\\Users\\Arabjonoff\\Documents\\GitHub\\N-Hisob\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

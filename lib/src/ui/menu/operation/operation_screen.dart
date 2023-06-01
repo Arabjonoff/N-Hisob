@@ -12,7 +12,20 @@ class OperationScreen extends StatefulWidget {
   State<OperationScreen> createState() => _OperationScreenState();
 }
 
-class _OperationScreenState extends State<OperationScreen> {
+class _OperationScreenState extends State<OperationScreen> with TickerProviderStateMixin  {
+  TabController? _tabBarController;
+  List data = [
+    'Kirimlar ',
+    'Chiqimlar',
+    'Xarajatlar',
+  ];
+
+  @override
+  initState() {
+    _tabBarController = TabController(length: data.length, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -29,44 +42,76 @@ class _OperationScreenState extends State<OperationScreen> {
       body: SafeArea(
           child:Column(
             children: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              // Container(
+              //   margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              //   width: MediaQuery.of(context).size.width,
+              //   height: 50,
+              //   decoration: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(10),
+              //     color: AppColor.white
+              //   ),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //         child: Text('Kirimlar',style: Styles.bodyP(AppColor.textColor, false),),
+              //         padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(5)
+              //         ),
+              //
+              //       ),
+              //       Container(
+              //         child: Text('Chiqimlar',style: Styles.bodyP(AppColor.textColor, false),),
+              //         padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(5),
+              //         ),
+              //
+              //       ),
+              //       Container(
+              //         child: Text('Xarjatlar',style: Styles.bodyP(AppColor.white, false),),
+              //         padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
+              //         decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(5),
+              //           color: AppColor.lightPurple,
+              //
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: AppColor.white
                 ),
-                child: Row(
-                  children: [
-                    Container(
-                      child: Text('Kirimlar',style: Styles.bodyP(AppColor.textColor, false),),
-                      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5)
-                      ),
-
-                    ),
-                    Container(
-                      child: Text('Chiqimlar',style: Styles.bodyP(AppColor.textColor, false),),
-                      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-
-                    ),
-                    Container(
-                      child: Text('Xarjatlar',style: Styles.bodyP(AppColor.white, false),),
-                      padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                        color: AppColor.lightPurple,
-
-                      ),
-                    ),
-                  ],
+            child: TabBar(
+              onTap: (i){
+              },
+              unselectedLabelColor: AppColor.black.withOpacity(0.5),
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              isScrollable: true,
+              indicatorColor: AppColor.lightPurple,
+              labelColor: AppColor.white,
+              indicator: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
+                color: AppColor.lightPurple,
               ),
+              labelStyle: Styles.bodyP(AppColor.textColor,false),
+              controller: _tabBarController,
+              tabs: data.map((e) {
+                return Tab(
+                  text: e,
+                );
+              }).toList(),
+            ),
+          ),
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
