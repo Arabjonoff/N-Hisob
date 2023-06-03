@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:n_hisob/src/ui/auth/login/login_screen.dart';
 import 'package:n_hisob/src/ui/auth/verfication/verfication_screen.dart';
 import 'package:n_hisob/src/ui/menu/agent/agent_sreen.dart';
+import 'package:n_hisob/src/ui/menu/expensive/add_expensive.dart';
 import 'package:n_hisob/src/ui/menu/home/home_screen.dart';
 import 'package:n_hisob/src/ui/menu/income/add_income_screen.dart';
 import 'package:n_hisob/src/ui/menu/income/income_screen.dart';
 import 'package:n_hisob/src/ui/menu/main_screen.dart';
+import 'package:n_hisob/src/ui/menu/outcome/add_outcome_screen.dart';
 import 'package:n_hisob/src/ui/menu/outcome/outcome_screen.dart';
 import 'package:n_hisob/src/ui/menu/wallet/wallet_screen.dart';
 
@@ -31,6 +33,10 @@ Route? onGenerator(RouteSettings settings){
       return _navigate(const AddIncomeScreen());
     case '/outcome':
       return _navigate(const OutcomeScreen());
+    case '/addOutcome':
+      return _navigate(const AddOutComeScreen());
+    case '/addExpensive':
+      return _navigate(const AddExpensiveScreen());
     case '/main':
       return _navigate(const MainScreen());
     case '/wallet':

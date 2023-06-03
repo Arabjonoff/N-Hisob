@@ -57,77 +57,78 @@ class _AddAgentScreenState extends State<AddAgentScreen> with TickerProviderStat
                 TextFieldWidget(controller: nameController, icon: 'assets/icons/profile.svg', hint: 'Ismi'),
                 TextFieldWidget(controller: phoneController, icon: 'assets/icons/call.svg', hint: 'Telfon raqami',type: true,),
                 TextFieldWidget(controller: sumController, icon: 'assets/icons/coin.svg', hint: 'So\'m Qoldiqi',type: true,),
-                const SizedBox(height: 12,),
-                Container(
-                  alignment: Alignment.center,
-                  height: 50 * w,
-                  margin: EdgeInsets.symmetric(horizontal: 20 * w),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: AppColor.white,
-                  ),
-                  child: TabBar(
-                    onTap: (i) {},
-                    unselectedLabelColor: AppColor.black.withOpacity(0.5),
-                    isScrollable: true,
-                    indicatorColor: AppColor.lightPurple,
-                    labelColor: AppColor.white,
-                    indicator: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      color: AppColor.lightPurple,
-                    ),
-                    labelStyle: Styles.bodyP(AppColor.textColor, false),
-                    controller: _tabBarController,
-                    tabs: somData.map((e) {
-                      return Tab(
-                        height: 40,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.0 * w),
-                          child: Text(e),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                const SizedBox(height: 12,),
+                // const SizedBox(height: 12,),
+                // Container(
+                //   alignment: Alignment.center,
+                //   height: 50 * w,
+                //   margin: EdgeInsets.symmetric(horizontal: 20 * w),
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(10),
+                //     color: AppColor.white,
+                //   ),
+                //   child: TabBar(
+                //     onTap: (i) {},
+                //     unselectedLabelColor: AppColor.black.withOpacity(0.5),
+                //     isScrollable: true,
+                //     indicatorColor: AppColor.lightPurple,
+                //     labelColor: AppColor.white,
+                //     indicator: ShapeDecoration(
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(10),
+                //       ),
+                //       color: AppColor.lightPurple,
+                //     ),
+                //     labelStyle: Styles.bodyP(AppColor.textColor, false),
+                //     controller: _tabBarController,
+                //     tabs: somData.map((e) {
+                //       return Tab(
+                //         height: 40,
+                //         child: Padding(
+                //           padding: EdgeInsets.symmetric(horizontal: 20.0 * w),
+                //           child: Text(e),
+                //         ),
+                //       );
+                //     }).toList(),
+                //   ),
+                // ),
+                // const SizedBox(height: 12,),
                 TextFieldWidget(controller: sumController, icon: 'assets/icons/coin.svg', hint: '\$ Qoldiqi',type: true,),
-                const SizedBox(height: 12,),
-                Container(
-                  alignment: Alignment.center,
-                  height: 50 * w,
-                  margin: EdgeInsets.symmetric(horizontal: 20 * w),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: AppColor.white,
-                  ),
-                  child: TabBar(
-                    onTap: (i) {},
-                    unselectedLabelColor: AppColor.black.withOpacity(0.5),
-                    isScrollable: true,
-                    indicatorColor: AppColor.lightPurple,
-                    labelColor: AppColor.white,
-                    indicator: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      color: AppColor.lightPurple,
-                    ),
-                    labelStyle: Styles.bodyP(AppColor.textColor, false),
-                    controller: _usdTabBarController,
-                    tabs: somUsd.map((e) {
-                      return Tab(
-                        height: 40,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.0 * w),
-                          child: Text(e),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                const SizedBox(height: 12,),
+                // const SizedBox(height: 12,),
+                // Container(
+                //   alignment: Alignment.center,
+                //   height: 50 * w,
+                //   margin: EdgeInsets.symmetric(horizontal: 20 * w),
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(10),
+                //     color: AppColor.white,
+                //   ),
+                //   child: TabBar(
+                //     onTap: (i) {},
+                //     unselectedLabelColor: AppColor.black.withOpacity(0.5),
+                //     isScrollable: true,
+                //     indicatorColor: AppColor.lightPurple,
+                //     labelColor: AppColor.white,
+                //     indicator: ShapeDecoration(
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(10),
+                //       ),
+                //       color: AppColor.lightPurple,
+                //     ),
+                //     labelStyle: Styles.bodyP(AppColor.textColor, false),
+                //     controller: _usdTabBarController,
+                //     tabs: somUsd.map((e) {
+                //       return Tab(
+                //         height: 40,
+                //         child: Padding(
+                //           padding: EdgeInsets.symmetric(horizontal: 20.0 * w),
+                //           child: Text(e),
+                //         ),
+                //       );
+                //     }).toList(),
+                //   ),
+                // ),
+                // const SizedBox(height: 12,),
+                TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/profile.svg', hint: 'Agent turi',enables: false,),
                 TextFieldWidget(controller: commentController, icon: 'assets/icons/message.svg', hint: 'Izohi'),
               ],
             ),),

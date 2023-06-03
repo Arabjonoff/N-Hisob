@@ -34,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
             card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
             card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
-            card("Chiqim qo'shish", 'assets/icons/money_send.svg', (){}),
-            card("Xarajat qo'shish", 'assets/icons/receipt.svg', (){}),
+            card("Chiqim qo'shish", 'assets/icons/money_send.svg', ()=>Navigator.pushNamed(context, '/addOutcome')),
+            card("Xarajat qo'shish", 'assets/icons/receipt.svg', ()=>Navigator.pushNamed(context, '/addExpensive')),
               ],
             ),
             const SizedBox(height: 36,),
