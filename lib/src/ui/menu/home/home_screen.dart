@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-            card("Agent qo'shish", 'assets/icons/users.svg', (){}),
+            card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
             card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
             card("Chiqim qo'shish", 'assets/icons/money_send.svg', (){}),
             card("Xarajat qo'shish", 'assets/icons/receipt.svg', (){}),
