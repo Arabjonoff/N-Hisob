@@ -53,99 +53,97 @@ class _WalletScreenState extends State<WalletScreen> {
         child: Column(
           children: [
             Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
+                child: ListView(
               children: [
-                  const SizedBox(height: 24,),
-                  TextFieldWidget(
-                      controller: cardController,
-                      icon: 'assets/icons/wallet.svg',
-                      hint: 'Hamyon nomi'),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    margin: EdgeInsets.symmetric(horizontal: 20*w,vertical: 10),
-                    height: 50*w,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
-                          BoxShadow(
-                              blurRadius: 15,
-                              offset: Offset(4, 15),
-                              color: Color.fromRGBO(255, 255, 255, 0.1)),
-                        ],
-                        color: AppColor.white),
-                    child: Row(children: [
-                      SvgPicture.asset('assets/icons/sum.svg'),
-                      const SizedBox(width: 14,),
-                      Expanded(
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton(
-                            isExpanded: true,
-                            value: dropDownValue,
-                            onChanged: (newValue) {
-                              setState(() {
-                                dropDownValue = newValue!;
-                              });
-                            },
-                            items: items.map((i) {
-                              return DropdownMenuItem(
-                                value: i,
-                                child: Text(
-                                  i,
-                                  style: Styles.bodyP(AppColor.textColor, false),
-                                ),
-                              );
-                            }).toList(),
+                const SizedBox(height: 24,),
+                TextFieldWidget(
+                    controller: cardController,
+                    icon: 'assets/icons/wallet.svg',
+                    hint: 'Hamyon nomi'),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  margin: EdgeInsets.symmetric(horizontal: 20*w,vertical: 10),
+                  height: 50*w,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: const [
+                        BoxShadow(
+                            blurRadius: 15,
+                            offset: Offset(4, 15),
+                            color: Color.fromRGBO(255, 255, 255, 0.1)),
+                      ],
+                      color: AppColor.white),
+                  child: Row(children: [
+                    SvgPicture.asset('assets/icons/sum.svg'),
+                    const SizedBox(width: 14,),
+                    Expanded(
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton(
+                          isExpanded: true,
+                          value: dropDownValue,
+                          onChanged: (newValue) {
+                            setState(() {
+                              dropDownValue = newValue!;
+                            });
+                          },
+                          items: items.map((i) {
+                            return DropdownMenuItem(
+                              value: i,
+                              child: Text(
+                                i,
+                                style: Styles.bodyP(AppColor.textColor, false),
+                              ),
+                            );
+                          }).toList(),
 
-                          ),
                         ),
                       ),
-                    ],)
-                  ),
-                  TextFieldWidget(
-                      controller: cardSumController,
-                      icon: 'assets/icons/coin.svg',
-                      hint: 'Summa'),
-                  SizedBox(
-                    height: 150,
-                    child: PageView.builder(
-                      controller: _pageController,
-                      itemCount: images.length,
-                        onPageChanged: (i){
+                    ),
+                  ],)
+                ),
+                TextFieldWidget(
+                    controller: cardSumController,
+                    icon: 'assets/icons/coin.svg',
+                    hint: 'Summa'),
+                SizedBox(
+                  height: 150,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: images.length,
+                      onPageChanged: (i){
 
-                         setState(() {
-                           indicator = i;
-                         });
-                        },
-                        itemBuilder: (ctx,index){
-                      return Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-                        width: MediaQuery.of(context).size.width,
-                        height: 150,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.red
-                        ),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(images[index],fit: BoxFit.cover,)),
-                      );
-                    }),
+                       setState(() {
+                         indicator = i;
+                       });
+                      },
+                      itemBuilder: (ctx,index){
+                    return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+                      width: MediaQuery.of(context).size.width,
+                      height: 150,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.red
+                      ),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(images[index],fit: BoxFit.cover,)),
+                    );
+                  }),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                    bottom: 44,
+                    left: 25,
+                    right: 25,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      bottom: 44,
-                      left: 25,
-                      right: 25,
-                    ),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: _buildIndicator(),
-                    ),
-                  )
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                    children: _buildIndicator(),
+                  ),
+                )
               ],
-            ),
-                ),),
+            ),),
             OnTapWidget(title: 'Davom etish', onTap: (){}),
             const SizedBox(height: 32,),
           ],

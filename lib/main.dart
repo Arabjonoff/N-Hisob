@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'N-Hisob',
       theme: ThemeData(
+        platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/main',

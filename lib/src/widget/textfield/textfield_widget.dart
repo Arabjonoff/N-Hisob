@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:n_hisob/src/theme/color/colors.dart';
+import 'package:n_hisob/src/theme/font_theme/font_style.dart';
 
 import '../../utils/utils.dart';
 
@@ -73,7 +74,7 @@ class TextFieldWidget extends StatelessWidget {
               decoration: InputDecoration(
                 suffixIcon: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text(currencyType),
+                  child: Text(currencyType,style: Styles.bodyP(AppColor.textColor, false),),
                 ),
                 // suffix:  currency?Padding(
                 //   padding: const EdgeInsets.only(right: 8.0),
