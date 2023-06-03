@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return  Scaffold(
       floatingActionButton: AnimatedFloatingActionButton(
+        tooltip: 'Amallar',
         //Fab list
           fabButtons: <Widget>[
             float1(), float2(),float3(),float4()
@@ -140,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColor.purple,
       onPressed: ()=> Navigator.pushNamed(context, '/addAgent'),
       heroTag: "btn4",
-      tooltip: 'First button',
+      tooltip: 'Agent qoshish',
       child: SvgPicture.asset('assets/icons/profile.svg',color: AppColor.white,),
     );
   }
@@ -149,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColor.purple,
       onPressed: ()=> Navigator.pushNamed(context, '/addIncome'),
       heroTag: "btn3",
-      tooltip: 'First button',
+      tooltip: 'Kirim qoshish',
       child: SvgPicture.asset('assets/icons/money.svg',color: AppColor.white,),
     );
   }
@@ -158,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColor.purple,
       onPressed: ()=> Navigator.pushNamed(context, '/addOutcome'),
       heroTag: "btn1",
-      tooltip: 'First button',
+      tooltip: 'Chiqim qoshish',
       child: SvgPicture.asset('assets/icons/money_send.svg',color: AppColor.white,),
     );
   }
@@ -168,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: AppColor.purple,
       onPressed: ()=> Navigator.pushNamed(context, '/addExpensive'),
       heroTag: "btn2",
-      tooltip: 'Second button',
+      tooltip: 'Xarajat qoshish',
       child: SvgPicture.asset('assets/icons/receipt.svg',color: AppColor.white,),
     );
   }
