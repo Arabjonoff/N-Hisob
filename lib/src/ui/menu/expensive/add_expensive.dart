@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:n_hisob/src/theme/color/colors.dart';
 import 'package:n_hisob/src/theme/font_theme/font_style.dart';
 import 'package:n_hisob/src/widget/button/ontap_widget.dart';
@@ -27,7 +28,11 @@ class _AddExpensiveScreenState extends State<AddExpensiveScreen> {
             Expanded(child: ListView(
               children: [
                 const SizedBox(height: 12,),
-                TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/calendar.svg', hint: 'Sana'),
+                GestureDetector(
+                    onTap: (){
+                      _selectDate(context);
+                    },
+                    child: TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/calendar.svg', hint: DateFormat('yyyy-MM-dd').format(selectedDate),enables: false,)),
                 TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/category.svg', hint: 'Harajat turi'),
                 TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/wallet.svg', hint: 'Hamyon'),
                 TextFieldWidget(controller: TextEditingController(), icon: 'assets/icons/coin.svg', hint: 'Summa'),

@@ -1,8 +1,8 @@
+import 'package:animated_floating_buttons/widgets/animated_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_hisob/src/theme/color/colors.dart';
 import 'package:n_hisob/src/theme/font_theme/font_style.dart';
-import 'dart:math' as math;
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -11,9 +11,22 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  final GlobalKey<AnimatedFloatingActionButtonState> key =GlobalKey<AnimatedFloatingActionButtonState>();
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      floatingActionButton: AnimatedFloatingActionButton(
+        //Fab list
+          fabButtons: <Widget>[
+            float1(), float2(),float3(),float4()
+          ],
+          key : key,
+          colorStartAnimation: AppColor.lightPurple,
+          colorEndAnimation: AppColor.red,
+          animatedIconData: AnimatedIcons.menu_close,
+      ),
       backgroundColor: AppColor.background,
       body: SafeArea(
         child: Column(
@@ -29,15 +42,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: TextButton(child: Text('Hamyon qoshish',style: Styles.body(AppColor.white),),onPressed: ()=>Navigator.pushNamed(context, '/wallet'),),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-            card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
-            card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
-            card("Chiqim qo'shish", 'assets/icons/money_send.svg', ()=>Navigator.pushNamed(context, '/addOutcome')),
-            card("Xarajat qo'shish", 'assets/icons/receipt.svg', ()=>Navigator.pushNamed(context, '/addExpensive')),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            // card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
+            // card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
+            // card("Chiqim qo'shish", 'assets/icons/money_send.svg', ()=>Navigator.pushNamed(context, '/addOutcome')),
+            // card("Xarajat qo'shish", 'assets/icons/receipt.svg', ()=>Navigator.pushNamed(context, '/addExpensive')),
+            //   ],
+            // ),
             const SizedBox(height: 36,),
             Padding(
               padding: const EdgeInsets.only(left: 10.0,bottom: 15),
@@ -119,6 +132,44 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(title,style: Styles.bodyP(AppColor.textColor, false),textAlign: TextAlign.center,)
         ],
       ),
+    );
+  }
+
+  Widget float1() {
+    return FloatingActionButton(
+      backgroundColor: AppColor.purple,
+      onPressed: ()=> Navigator.pushNamed(context, '/addAgent'),
+      heroTag: "btn4",
+      tooltip: 'First button',
+      child: SvgPicture.asset('assets/icons/profile.svg',color: AppColor.white,),
+    );
+  }
+  Widget float4() {
+    return FloatingActionButton(
+      backgroundColor: AppColor.purple,
+      onPressed: ()=> Navigator.pushNamed(context, '/addIncome'),
+      heroTag: "btn3",
+      tooltip: 'First button',
+      child: SvgPicture.asset('assets/icons/money.svg',color: AppColor.white,),
+    );
+  }
+  Widget float3() {
+    return FloatingActionButton(
+      backgroundColor: AppColor.purple,
+      onPressed: ()=> Navigator.pushNamed(context, '/addOutcome'),
+      heroTag: "btn1",
+      tooltip: 'First button',
+      child: SvgPicture.asset('assets/icons/money_send.svg',color: AppColor.white,),
+    );
+  }
+
+  Widget float2() {
+    return FloatingActionButton(
+      backgroundColor: AppColor.purple,
+      onPressed: ()=> Navigator.pushNamed(context, '/addExpensive'),
+      heroTag: "btn2",
+      tooltip: 'Second button',
+      child: SvgPicture.asset('assets/icons/receipt.svg',color: AppColor.white,),
     );
   }
 }

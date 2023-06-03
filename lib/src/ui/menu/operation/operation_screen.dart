@@ -29,8 +29,13 @@ class _OperationScreenState extends State<OperationScreen> with TickerProviderSt
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      endDrawer: Drawer(
-        child: SafeArea(child: Text('sxxsx')),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 58.0),
+        child: FloatingActionButton(
+          backgroundColor: AppColor.lightPurple,
+          onPressed: (){},
+          child: SvgPicture.asset('assets/icons/filter.svg',color: AppColor.white,),
+        ),
       ),
       appBar: AppBar(
         foregroundColor: AppColor.black,
