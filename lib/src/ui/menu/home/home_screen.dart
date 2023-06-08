@@ -1,4 +1,3 @@
-import 'package:animated_floating_buttons/widgets/animated_floating_action_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:n_hisob/src/theme/color/colors.dart';
@@ -10,24 +9,11 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-
-  final GlobalKey<AnimatedFloatingActionButtonState> key =GlobalKey<AnimatedFloatingActionButtonState>();
-
+class _HomeScreenState extends State<HomeScreen>  {
   @override
   Widget build(BuildContext context) {
+
     return  Scaffold(
-      floatingActionButton: AnimatedFloatingActionButton(
-        tooltip: 'Amallar',
-        //Fab list
-          fabButtons: <Widget>[
-            float1(), float2(),float3(),float4()
-          ],
-          key : key,
-          colorStartAnimation: AppColor.lightPurple,
-          colorEndAnimation: AppColor.red,
-          animatedIconData: AnimatedIcons.menu_close,
-      ),
       backgroundColor: AppColor.background,
       body: SafeArea(
         child: Column(
@@ -43,15 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: TextButton(child: Text('Hamyon qoshish',style: Styles.body(AppColor.white),),onPressed: ()=>Navigator.pushNamed(context, '/wallet'),),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            // card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
-            // card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
-            // card("Chiqim qo'shish", 'assets/icons/money_send.svg', ()=>Navigator.pushNamed(context, '/addOutcome')),
-            // card("Xarajat qo'shish", 'assets/icons/receipt.svg', ()=>Navigator.pushNamed(context, '/addExpensive')),
-            //   ],
-            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+            card("Agent qo'shish", 'assets/icons/users.svg', () => Navigator.pushNamed(context, '/addAgent')),
+            card("Kirim qo'shish", 'assets/icons/money.svg', () => Navigator.pushNamed(context, '/income')),
+            card("Chiqim qo'shish", 'assets/icons/money_send.svg', ()=>Navigator.pushNamed(context, '/addOutcome')),
+            card("Xarajat qo'shish", 'assets/icons/receipt.svg', ()=>Navigator.pushNamed(context, '/addExpensive')),
+              ],
+            ),
             const SizedBox(height: 36,),
             Padding(
               padding: const EdgeInsets.only(left: 10.0,bottom: 15),
@@ -104,7 +90,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
   Widget card(title,icons,onTap){
     return SizedBox(
       width: 60,
@@ -133,44 +118,6 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(title,style: Styles.bodyP(AppColor.textColor, false),textAlign: TextAlign.center,)
         ],
       ),
-    );
-  }
-
-  Widget float1() {
-    return FloatingActionButton(
-      backgroundColor: AppColor.purple,
-      onPressed: ()=> Navigator.pushNamed(context, '/addAgent'),
-      heroTag: "btn4",
-      tooltip: 'Agent qoshish',
-      child: SvgPicture.asset('assets/icons/profile.svg',color: AppColor.white,),
-    );
-  }
-  Widget float4() {
-    return FloatingActionButton(
-      backgroundColor: AppColor.purple,
-      onPressed: ()=> Navigator.pushNamed(context, '/addIncome'),
-      heroTag: "btn3",
-      tooltip: 'Kirim qoshish',
-      child: SvgPicture.asset('assets/icons/money.svg',color: AppColor.white,),
-    );
-  }
-  Widget float3() {
-    return FloatingActionButton(
-      backgroundColor: AppColor.purple,
-      onPressed: ()=> Navigator.pushNamed(context, '/addOutcome'),
-      heroTag: "btn1",
-      tooltip: 'Chiqim qoshish',
-      child: SvgPicture.asset('assets/icons/money_send.svg',color: AppColor.white,),
-    );
-  }
-
-  Widget float2() {
-    return FloatingActionButton(
-      backgroundColor: AppColor.purple,
-      onPressed: ()=> Navigator.pushNamed(context, '/addExpensive'),
-      heroTag: "btn2",
-      tooltip: 'Xarajat qoshish',
-      child: SvgPicture.asset('assets/icons/receipt.svg',color: AppColor.white,),
     );
   }
 }

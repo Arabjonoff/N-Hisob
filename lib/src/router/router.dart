@@ -5,11 +5,11 @@ import 'package:n_hisob/src/ui/menu/agent/agent_sreen.dart';
 import 'package:n_hisob/src/ui/menu/expensive/add_expensive.dart';
 import 'package:n_hisob/src/ui/menu/home/home_screen.dart';
 import 'package:n_hisob/src/ui/menu/income/add_income_screen.dart';
-import 'package:n_hisob/src/ui/menu/income/income_screen.dart';
 import 'package:n_hisob/src/ui/menu/main_screen.dart';
 import 'package:n_hisob/src/ui/menu/outcome/add_outcome_screen.dart';
 import 'package:n_hisob/src/ui/menu/outcome/outcome_screen.dart';
 import 'package:n_hisob/src/ui/menu/wallet/wallet_screen.dart';
+import 'package:n_hisob/src/ui/onborading/onboarding.dart';
 
 import '../ui/auth/register/register_screen.dart';
 
@@ -19,6 +19,8 @@ Route? onGenerator(RouteSettings settings){
   switch(settings.name){
     case '/register':
       return _navigate(const RegisterScreen());
+    case '/onBoarding':
+      return _navigate(OnBoardingScreen(image: args.toString(), title: args.toString(), subtitle: args.toString(),));
     case '/login':
       return _navigate(const Loginscreen());
     case '/activate':

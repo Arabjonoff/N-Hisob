@@ -1,4 +1,4 @@
-#Sat Jun 03 12:09:19 UZT 2023
+#Thu Jun 08 10:42:16 UZT 2023
 base.0=C\:\\Users\\Arabjonoff\\Documents\\GitHub\\N-Hisob\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

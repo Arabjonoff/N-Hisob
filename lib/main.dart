@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         platform: TargetPlatform.iOS,
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/main',
+      initialRoute: '/onBoarding',
       onGenerateRoute: _route.onGenerator,
     );
   }
